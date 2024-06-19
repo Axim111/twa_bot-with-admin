@@ -10,7 +10,7 @@ declare global {
 		Telegram: Telegram
 	}
 }
-console.log(window.Telegram.WebApp)
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<Provider store={store}>

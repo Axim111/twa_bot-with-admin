@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import style from './App.module.css'
 import { useAppSelector, useAppDispatch } from '@/feature/redux.ts'
 import { decrement, increment } from '@/entities/redux/slice/counter.ts'
 
@@ -12,12 +12,22 @@ function App() {
 
 	return (
 		<>
-			<div>{count}</div>
+			<div className={style.responseTest}>{count}</div>
 			<button
 				aria-label="Increment value"
-				onClick={() => dispatch(increment())}
+				onClick={async () => {
+					dispatch(increment())
+				}}
 			>
-				123
+				increment
+			</button>
+			<button
+				aria-label="Increment value"
+				onClick={async () => {
+					window.Telegram.WebApp.sendData(count.toString())
+				}}
+			>
+				add
 			</button>
 		</>
 	)

@@ -1,0 +1,8 @@
+.responseTest {
+	@media (min-width: 1000px) {
+		visibility: hidden;
+	}
+	@media (max-width: 1199.98px) {
+		color: aqua;
+	}
+}
